@@ -1,0 +1,15 @@
+name: my workflow                           #workflow name
+
+on:                                         # Event(s) that trigger this workflow
+    push:
+        branches: [main, develop]
+    
+jobs:                                       # One or more jobs
+    my-job:                                 # job ID or name
+        runs-on: ubuntu-latest              # runner OS
+        steps:                              # sequential steps
+            - name: checkout code
+              uses: actions/checkout@v4     # reusable action 
+            
+            - name: Say hello
+              run: echo "Hello World!"      # Shell command
